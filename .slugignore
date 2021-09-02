@@ -3,3 +3,6 @@
 *.pdf
 /test
 /spec
+static/popper.min.js
+static/jquery.min.js
+static/index.js
