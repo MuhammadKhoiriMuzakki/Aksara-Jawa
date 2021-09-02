@@ -1,0 +1,16 @@
+#main_banner{
+    background-image: url('assets/Bromo-unsplash.jpg');
+}
+
+.navbar-brand{
+    font-weight: bold;
+}
+
+#pertanyaan_1{
+    background-image: 
+        url('assets/img2.jpg');
+}
+
+#thank_section{
+    background-image: url('assets/city.jpg');
+}

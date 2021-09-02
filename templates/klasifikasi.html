@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% block title %}
+    Aksara Jawa || Javanese Alphabet
+{% endblock %}
+
+{% block content %}
+<div class="page-header header-filter clear-filter purple-filter" data-parallax="true" id="main_banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <div class="brand">
+            <h1>Aksara Jawa.</h1>
+            <h3>Salah satu aksara tradisional Indonesia yang berkembang di pulau Jawa.</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- konten -->
+  <div class="main main-raised">
+    <!-- image classification -->
+    <div class="section section-basic">
+      <div class="container">
+        <div id='image-classification'>
+          <div class="title">
+            <h2>Klasifikasi Gambar</h2>
+            <small>Foto Tulisan Aksara Jawa Anda, Lalu Prediksi Apakah Tulisan Anda Sudah Benar</small>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="title">
+                <h3>Upload Gambar</h3>
+              </div>
+              <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
+
+                <div class="form-group">
+                  <label class="control-label" for="pwd">Klik disini untuk memilih gambar !</label>   
+                  <input type="file" class="form-control"  name="my_image" id="pwd" required>
+                </div>
+            
+                <div class="form-group">        
+                    <button type="submit" class="btn btn-primary">Prediksi</button>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-6">
+              <div class="title">
+                <h3>Hasil Prediksi</h3>
+              </div>
+              <div>
+              {% if prediction %}
+              <img src="{{img_path}}" height="224px" width="224px">
+              <h2> Hasil Prediksi   : <i> {{prediction}} </i></h2>
+              {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- akhir image classification -->
+    </div> <!-- akhir section basic -->  
+
+      <!-- Pertanyaan -->
+      <div class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-md-7" >
+              <div class="title">
+                <h2>Apa itu Aksara Jawa?</h2>
+              </div>
+                <h5>Aksara Jawa merupakan salah satu aksara tradisional yang digunakan di wilayah Jawa. Aksara ini dominan digunakan untuk menulis teks berbahasa Jawa, tetapi juga diadaptasi oleh budaya lain seperti Sunda, Madura, Sasak, Melayu, dan bahasa sejarah lainnya seperti Sansekerta dan Kawi. Aksara Jawa berasal dari aksara Brahmi India melalui aksara Kawi dan sangat erat kaitannya dengan aksara Bali. Aksara Jawa banyak digunakan pada abad ke-15 hingga pertengahan abad ke-20 tepat sebelum penggunaannya perlahan digantikan oleh huruf latin.
+                  Saat ini masih diajarkan di DI Yogyakarta, Jawa Tengah, dan Jawa Timur tetapi dengan penggunaan sehari-hari yang terbatas.</h5>
+              <button class="btn btn-primary">Lebih Lanjut >></button>
+            </div>
+            <div class="col-lg-4 col-md-2 d-md-block d-sm-none d-none">
+              <img src="{{url_for('static',filename='assets/wayang.png')}}" alt="wayang arjuna" height="70%">
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+
+      <!-- pertanyaan 2 -->
+        <div class="container">
+          <div class="title">
+            <h2>Apa yang kami lakukan?</h2>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-3">
+                  <ul class="nav nav-pills nav-pills-icons flex-column" role="tablist">
+                    <!--
+                                        color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"
+                                    -->
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#digitalisasi_sejarah" role="tab" data-toggle="tab">
+                        <i class="material-icons">dashboard</i>
+                        Digitalisasi Sejarah
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#belajar_dan_melestarikan" role="tab" data-toggle="tab">
+                        <i class="material-icons">schedule</i>
+                        Belajar & Melestarikan
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-8">
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="digitalisasi_sejarah">
+                      Pentingnya mendigitalisasikan sejarah tidak hanya berlaku untuk Aksara Jawa saja tetapi berlaku untuk semua bidang sejarah lainya. 
+                      Sehingga masyarakat umum bisa lebih mengenali sejarah bangsanya sendiri, di samping juga membantu para ahli dalam melakukan rekonstruksi ataupun rehabilitasi bila diperlukan. 
+                      <br><br> Berdasarkan riset yang kami lakukan, masih banyak dari kita tidak mengetahui sejarah dari bangsa kita sendiri. Sedangkan presiden pertama kita sering mengingatkan kita untuk tidak pernah melupakan sejarah.
+                      <br><br>
+                      <div class="blockquote undefined">
+                        <p>
+                          Jangan sekali-sekali meninggalkan sejarah
+                        </p>
+                        <small>
+                          Ir. Soekarno
+                        </small>
+                      </div>
+                    </div>
+                    <div class="tab-pane" id="belajar_dan_melestarikan">
+                      Kami menggunakan Machine Learning yang diharapkan dapat membantu untuk mengklasifikasikan tulisan Aksara Jawa, sehingga anda dapat mencocokan apakah tulisan anda sudah benar.
+                      <br><br> anda berkenan perkenalkan sistem ini kepada anak-anak sebagai generasi penerus bangsa, agar tidak hilang kedepannya.
+                      Karena Organisasi Pendidikan, Keilmuan, dan Kebudayaan Perserikatan Bangsa-Bangsa (UNESCO) secara resmi mengatakan hampir 2.500 bahasa di seluruh dunia di ambang kepunahan. bahkan mengatakan bahwa satu bahasa hilang setiap 15 hari
+                      <br><br> Seiring berlajannya waktu dengan berkembangnya sistem ini akan menghadirkan berbagai macam arsip sejarah lainya.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- Akhir Section Pertanyaan -->
+
+      <!-- Thankyou -->
+      <div class="section" id="thank_section">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-md-8 mx-auto text-center">
+              <h2>Matur Nuwun</h2>
+              <h4>Terima Kasih Atas Kunjungan Anda, Saran dan Kiritik yang membanggun sangat berharga bagi kami untuk mengembangkan website ini kedepannya.</h4>
+            </div>
+          </div>
+        </div>
+      </div>      
+  </div> <!-- akhir konten -->
+  {% endblock %}  

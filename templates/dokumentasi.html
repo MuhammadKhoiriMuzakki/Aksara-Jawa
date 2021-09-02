@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block title %}
+    |Documentasi Machine Learning
+{% endblock %}
+
+{% block content %}
+<div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="height: 30vh;">
+</div>
+  <!-- konten -->
+  <div class="main main-raised" style="margin: -90px 30px 0px;">
+    <!-- Cara Penggunaan -->
+    <div class="section section-basic">
+      <div class="container">
+        <div>
+          <div class="title">
+            <h2>Cara Penggunaan</h2>
+          </div>
+          <div class="row">
+            <div class="col">
+            <p style="text-indent: 50px; font-size: medium;">
+              Untuk penggunaannya sangat simple, anda hanya disuruh untuk mengupload foto tulisan huruf aksara anda pada halaman awal.
+            kemudian klik tombol "Prediksi". maka hasil prediksi otomatis akan di tampilkan pada layar anda.
+            </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- akhir section cara penggunaan --> 
+    
+    <!-- Cara Penggunaan -->
+    <div class="section section-basic">
+        <div class="container">
+          <div>
+            <div class="title">
+              <h2>Deep Learning</h2>
+            </div>
+            <div class="row">
+              <div class="col">
+              <p style="text-indent: 50px; font-size: medium;">
+                Deep learning (pembelajaran mendalam) merupakan bidang pengembangan dari
+                machine learning (pembelajaran mesin) yang telah terbukti sangat bermanfaat
+                terutama dalam bidang teks, gambar, dan ucapan.
+              </p>
+              <div class="title">
+                <h3>Convolutional Neural Networks</h3>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <p style="text-indent: 50px; font-size: medium;">
+                    CNN merupakan pengembangan dari artificial neural network (ANN)
+                    dimana kedua metode tersebut meniru sistem kerja sel saraf dalam otak manusia.
+                  </p>
+                </div>
+              </div>
+              </div>
+            </div>
+
+            <!-- Hasil Train -->
+            <div class="row">
+                <div class="col">
+                  <div class="title">
+                    <h3>Hasil Train Model</h3>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 align-self-center">
+                      <h4 style="text-align: center;">Hasil Train</h4>
+                      <img src="{{url_for('static',filename='assets/train_akurasi.png')}}" alt="train_akurasi">
+                    </div>
+                    <div class="col-md-6 align-self-center">
+                      <h4 style="text-align: center;">Hasil Test</h4>
+                      <img src="{{url_for('static',filename='assets/val_akurasi.png')}}" alt="val_akurasi">
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- akhir section Hasil Train -->
+
+    
+    
+
+      <!-- Thankyou -->
+      <div class="section" id="thank_section">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-md-8 mx-auto text-center">
+              <h2>Matur Nuwun</h2>
+              <h4>Terima Kasih Atas Kunjungan Anda, Saran dan Kiritik yang membanggun sangat berharga bagi kami untuk mengembangkan website ini kedepannya.</h4>
+            </div>
+          </div>
+        </div>
+      </div>      
+  </div> <!-- akhir konten -->
+  {% endblock %}  

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}
+    Canvas Classfication
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="height: 15vh; ">
+</div>
+  <!-- konten -->
+  <!-- <div class="main main-raised" style="margin: -90px 30px 0px;"> -->
+    <!-- Image Classfication With Canvas -->
+    <div class="section section-basic">
+      <div class="container">
+        <div>
+          <div class="title">
+            <h2>Image Classfication With Canvas</h2>
+          </div>
+          <form id = "myForm" action="{{ url_for('predict')}}" method="POST" enctype="multipart/form-data">
+			<canvas id="canvas", name ="draw" width="224" height="224" style="border:1px solid #000000;">
+			<script type="text/javascript">
+				$(document).ready(function() {
+					drawCanvas();
+				});
+			</script>
+			</canvas>
+			<input type="hidden" id = 'url' name="url" value="">
+			<input type="submit" id = 'predict' value="Predict" onclick="return save();">
+		</form>
+	
+		{% if prediction %}
+			<h2> Your Prediction   : <i> {{prediction}} </i></h2>
+		{% endif %}
+        </div>
+      </div>
+    </div> <!-- akhir section Image Classfication With Canvas --> 
+    
+    
+
+    
+    
+
+      <!-- Thankyou -->
+      <div class="section" id="thank_section">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-md-8 mx-auto text-center">
+              <h2>Matur Nuwun</h2>
+              <h4>Terima Kasih Atas Kunjungan Anda, Saran dan Kiritik yang membanggun sangat berharga bagi kami untuk mengembangkan website ini kedepannya.</h4>
+            </div>
+          </div>
+        </div>
+      <!-- </div>       -->
+  </div> <!-- akhir konten -->
+
+  
+  {% endblock %}  
