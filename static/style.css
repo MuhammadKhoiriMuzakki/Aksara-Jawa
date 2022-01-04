@@ -14,3 +14,36 @@
 #thank_section{
     background-image: url('assets/city.jpg');
 }
+
+
+/* .rotate{
+    -moz-transition: all 2s linear;
+    -webkit-transition: all 2s linear;
+    transition: all 2s linear;
+} */
+
+.rotate{
+    -ms-transform: rotate(900deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.overlay{
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+.nav_item_huruf_aksara{
+    background-color: rgba(0,0,0,0.1);
+    box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,0.2);
+}

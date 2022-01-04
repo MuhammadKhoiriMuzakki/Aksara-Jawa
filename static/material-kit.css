@@ -11833,6 +11833,12 @@
     margin-bottom: 25px;
     min-height: 32px;
   }
+
+  .title-arsip {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    min-height: 25px;
+  }
   
   #map {
     position: relative;

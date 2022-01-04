@@ -29,19 +29,44 @@
           <div class="row">
             <div class="col-md-6">
               <div class="title">
-                <h3>Upload Gambar</h3>
+                <h3>Upload Gambar
+                <i class="fa fa-info-circle" data-toggle="popover" data-placement="right" data-rel="popover" data-html="true" data-content="Sistem ini hanya berlaku untuk memprediksi aksara jawa jenis carakan saja" data-container="body"></i>
+                </h3>
               </div>
               <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
 
-                <div class="form-group">
-                  <label class="control-label" for="pwd">Klik disini untuk memilih gambar !</label>   
-                  <input type="file" class="form-control"  name="my_image" id="pwd" required>
+                <div class="form-group" id="uploadgbr">
+                  <label class='control-label' for='pwd' id='labelupload'>
+                    <img src="{{url_for('static',filename='assets/icon_number_1.png')}}" alt="icon_number_1" height="28px">  
+                    &ensp;
+                    <i class="fa fa-folder-open-o fa-2x" aria-hidden="true"></i> 
+                    Klik disini untuk memilih gambar !
+                  </label>
+                  <input type="file" class="form-control-file"  name="my_image" id='pwd' accept="image/*" required>
                 </div>
+                <label class='control-label' for='pwd' id='labelupload2' hidden='true'>
+                  <img src="{{url_for('static',filename='assets/icon_number_1_alter.png')}}" alt="icon_number_1" height="28px">  
+                  &ensp;
+                  <i class="fa fa-folder-open-o fa-2x" aria-hidden="true"></i> 
+                  Klik disini untuk untuk mengganti gambar !
+                </label>
             
-                <div class="form-group">        
+                <div class="form-group">
+                    <img src="{{url_for('static',filename='assets/icon_number_2_alter.png')}}" alt="icon_number_2" height="28px" id='icon2_alter'>       
+                    &ensp;
                     <button type="submit" class="btn btn-primary">Prediksi</button>
                 </div>
+                <img src="{{url_for('static',filename='assets/icon_number_2.png')}}" alt="icon_number_2" height="28px" id='icon2' hidden='true'> 
               </form>
+              <script>
+                $(function(){
+                  $('#uploadgbr').change(function(){
+                    $('#labelupload').replaceWith($('#labelupload2').attr("hidden",false));
+                    $('#icon2_alter').replaceWith($('#icon2').attr("hidden",false));
+                  });
+                });
+              </script>
+              
             </div>
             <div class="col-md-6">
               <div class="title">
@@ -49,8 +74,14 @@
               </div>
               <div>
               {% if prediction %}
+              <!--  -->
               <img src="{{img_path}}" height="224px" width="224px">
-              <h2> Hasil Prediksi   : <i> {{prediction}} </i></h2>
+              <h2 id='hasil'> Prediksi Sistem  : <i> {{prediction}} </i>&nbsp;
+                <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom" title="Cek Hasil Prediksi" data-rel="popover" data-html="true" data-content="<img src='{{url_for('static',filename='assets/aksara-carakan.png')}}' alt='aksara-carakan' width='100%'><br><a href='arsip_aksara_jawa'>Lebih Lanjut >></a>" data-container="body">
+                  <!-- <img src="{{url_for('static',filename='assets/aksara-carakan.png')}}" alt="aksara-carakan" width="50%"> -->
+                  <!-- <a href="arsip_aksara_jawa">Lebih Lanjut >></a> -->
+                </i>
+              </h2>
               {% endif %}
               </div>
             </div>
@@ -59,7 +90,7 @@
       </div>
       <!-- akhir image classification -->
     </div> <!-- akhir section basic -->  
-
+    
       <!-- Pertanyaan -->
       <div class="section">
         <div class="container">
@@ -68,9 +99,9 @@
               <div class="title">
                 <h2>Apa itu Aksara Jawa?</h2>
               </div>
-                <h5>Aksara Jawa merupakan salah satu aksara tradisional yang digunakan di wilayah Jawa. Aksara ini dominan digunakan untuk menulis teks berbahasa Jawa, tetapi juga diadaptasi oleh budaya lain seperti Sunda, Madura, Sasak, Melayu, dan bahasa sejarah lainnya seperti Sansekerta dan Kawi. Aksara Jawa berasal dari aksara Brahmi India melalui aksara Kawi dan sangat erat kaitannya dengan aksara Bali. Aksara Jawa banyak digunakan pada abad ke-15 hingga pertengahan abad ke-20 tepat sebelum penggunaannya perlahan digantikan oleh huruf latin.
+                <h5 style="text-align: justify;">Aksara Jawa merupakan salah satu aksara tradisional yang digunakan di wilayah Jawa. Aksara ini dominan digunakan untuk menulis teks berbahasa Jawa, tetapi juga diadaptasi oleh budaya lain seperti Sunda, Madura, Sasak, Melayu, dan bahasa sejarah lainnya seperti Sansekerta dan Kawi. Aksara Jawa berasal dari aksara Brahmi India melalui aksara Kawi dan sangat erat kaitannya dengan aksara Bali. Aksara Jawa banyak digunakan pada abad ke-15 hingga pertengahan abad ke-20 tepat sebelum penggunaannya perlahan digantikan oleh huruf latin.
                   Saat ini masih diajarkan di DI Yogyakarta, Jawa Tengah, dan Jawa Timur tetapi dengan penggunaan sehari-hari yang terbatas.</h5>
-              <button class="btn btn-primary">Lebih Lanjut >></button>
+              <button type="button" class="btn btn-primary" onclick="window.location.href='arsip_aksara_jawa'">Lebih Lanjut >></button>
             </div>
             <div class="col-lg-4 col-md-2 d-md-block d-sm-none d-none">
               <img src="{{url_for('static',filename='assets/wayang.png')}}" alt="wayang arjuna" height="70%">
@@ -108,7 +139,7 @@
                 </div>
                 <div class="col-md-8">
                   <div class="tab-content">
-                    <div class="tab-pane active" id="digitalisasi_sejarah">
+                    <div class="tab-pane active" id="digitalisasi_sejarah" style="text-align: justify;">
                       Pentingnya mendigitalisasikan sejarah tidak hanya berlaku untuk Aksara Jawa saja tetapi berlaku untuk semua bidang sejarah lainya. 
                       Sehingga masyarakat umum bisa lebih mengenali sejarah bangsanya sendiri, di samping juga membantu para ahli dalam melakukan rekonstruksi ataupun rehabilitasi bila diperlukan. 
                       <br><br> Berdasarkan riset yang kami lakukan, masih banyak dari kita tidak mengetahui sejarah dari bangsa kita sendiri. Sedangkan presiden pertama kita sering mengingatkan kita untuk tidak pernah melupakan sejarah.
@@ -122,7 +153,7 @@
                         </small>
                       </div>
                     </div>
-                    <div class="tab-pane" id="belajar_dan_melestarikan">
+                    <div class="tab-pane" id="belajar_dan_melestarikan" style="text-align: justify;">
                       Kami menggunakan Machine Learning yang diharapkan dapat membantu untuk mengklasifikasikan tulisan Aksara Jawa, sehingga anda dapat mencocokan apakah tulisan anda sudah benar.
                       <br><br> anda berkenan perkenalkan sistem ini kepada anak-anak sebagai generasi penerus bangsa, agar tidak hilang kedepannya.
                       Karena Organisasi Pendidikan, Keilmuan, dan Kebudayaan Perserikatan Bangsa-Bangsa (UNESCO) secara resmi mengatakan hampir 2.500 bahasa di seluruh dunia di ambang kepunahan. bahkan mengatakan bahwa satu bahasa hilang setiap 15 hari
