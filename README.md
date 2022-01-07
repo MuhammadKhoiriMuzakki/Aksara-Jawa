@@ -1,4 +1,5 @@
 # Aksara-Jawa Web App
+
 ## Aksara-Jawa
 <p align="justify">
 Aksara Jawa merupakan salah satu aksara tradisional yang digunakan di wilayah Jawa. 
@@ -8,6 +9,7 @@ Aksara Jawa banyak digunakan pada abad ke-15 hingga pertengahan abad ke-20 tepat
 </p>
 
 ## Apa yang Kami Lakukan?
+
 ### Digitalisasi Sejarah
 <p align="justify">
 Pentingnya mendigitalisasikan sejarah tidak hanya berlaku untuk Aksara Jawa saja tetapi berlaku untuk semua bidang sejarah lainya. Sehingga masyarakat umum bisa lebih mengenali sejarah bangsanya sendiri, di samping juga membantu para ahli dalam melakukan rekonstruksi ataupun rehabilitasi bila diperlukan.
@@ -19,6 +21,7 @@ Berdasarkan riset yang kami lakukan, masih banyak dari kita tidak mengetahui sej
 "Jangan sekali-sekali meninggalkan sejarah"
 - Ir. Soekarno
 </p>
+
 ### Belajar Dan Melestarikan
 <p align="justify">
 Kami menggunakan Machine Learning yang diharapkan dapat membantu untuk mengklasifikasikan tulisan Aksara Jawa, sehingga anda dapat mencocokan apakah tulisan anda sudah benar.
